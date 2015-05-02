@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  score: 1
+  date: 2015-05-01
+  business_id: 1
+  inspect_type: MyString
+
+two:
+  score: 1
+  date: 2015-05-01
+  business_id: 1
+  inspect_type: MyString

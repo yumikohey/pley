@@ -1,0 +1,70 @@
+  [1m[36m (1.3ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.4ms)[0m  select sqlite_version(*)
+  [1m[36m (1.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBusinesses (20150502061855)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "businesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar, "name" varchar, "owner_name" varchar, "postal_code" integer, "latitude" float, "longitude" float, "phone_number" varchar, "city" varchar, "TaxCode" integer, "business_certificate" varchar, "application_date" date, "owner_address" varchar, "owner_city" varchar, "owner_state" varchar, "owner_zip" integer, "business_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502061855"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateInspections (20150502062010)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "inspections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer, "date" date, "business_id" integer, "inspect_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502062010"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateViolations (20150502062219)
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "violations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "risk_category" varchar, "description" varchar, "business_id" integer, "violation_type_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502062219"]]
+  [1m[35m (0.9ms)[0m  commit transaction
+Migrating to CreateUsers (20150502063003)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "activation_digest" varchar, "activated" boolean, "activated_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502063003"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+Migrating to CreateComments (20150502064257)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "business_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502064257"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (8.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBusinesses (20150502061855)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "businesses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address" varchar, "name" varchar, "postal_code" integer, "latitude" float, "longitude" float, "phone_number" varchar, "city" varchar, "business_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502061855"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateInspections (20150502062010)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "inspections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "score" integer, "date" date, "business_id" integer, "inspect_type" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502062010"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateViolations (20150502062219)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "violations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "risk_category" varchar, "description" varchar, "business_id" integer, "violation_type_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502062219"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to CreateUsers (20150502063003)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "email" varchar, "activation_digest" varchar, "activated" boolean, "activated_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502063003"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Migrating to CreateComments (20150502064257)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "content" varchar, "business_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502064257"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Migrating to AddStateToBusinesses (20150502065214)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "businesses" ADD "state" varchar
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150502065214"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mBusiness Load (1.8ms)[0m  [1mSELECT "businesses".* FROM "businesses"[0m
+  [1m[35mInspection Load (0.2ms)[0m  SELECT "inspections".* FROM "inspections"
+  [1m[36mViolation Load (0.2ms)[0m  [1mSELECT "violations".* FROM "violations"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mBusiness Load (1.9ms)[0m  [1mSELECT "businesses".* FROM "businesses"[0m

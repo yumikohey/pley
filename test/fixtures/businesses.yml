@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyString
+  name: MyString
+  owner_name: MyString
+  postal_code: 1
+  latitude: 1.5
+  longitude: 1.5
+  phone_number: MyString
+  city: MyString
+  TaxCode: 1
+  business_certificate: MyString
+  application_date: 2015-05-01
+  owner_address: MyString
+  owner_city: MyString
+  owner_state: MyString
+  owner_zip: 1
+  business_id: 1
+
+two:
+  address: MyString
+  name: MyString
+  owner_name: MyString
+  postal_code: 1
+  latitude: 1.5
+  longitude: 1.5
+  phone_number: MyString
+  city: MyString
+  TaxCode: 1
+  business_certificate: MyString
+  application_date: 2015-05-01
+  owner_address: MyString
+  owner_city: MyString
+  owner_state: MyString
+  owner_zip: 1
+  business_id: 1

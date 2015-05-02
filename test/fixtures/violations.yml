@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2015-05-01
+  risk_category: MyString
+  description: MyString
+  business_id: 1
+  violation_type_id: 1
+
+two:
+  date: 2015-05-01
+  risk_category: MyString
+  description: MyString
+  business_id: 1
+  violation_type_id: 1
